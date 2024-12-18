@@ -27,6 +27,8 @@ dependencies {
     testImplementation("org.testcontainers:mysql")
     testImplementation("org.testcontainers:spock")
     testImplementation("org.testcontainers:testcontainers")
+    testImplementation("io.micronaut.test:micronaut-test-junit5")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
 }
 
 
@@ -59,6 +61,10 @@ micronaut {
         deduceEnvironment = true
         optimizeNetty = true
         replaceLogbackXml = true
+    }
+
+    tasks.withType(Test).configureEach {
+        useJUnitPlatform()
     }
 }
 
