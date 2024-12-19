@@ -7,9 +7,9 @@ import jakarta.inject.Inject;
 
 @Controller("/api/v1")
 public class NewController {
-
-    @Inject
     private final NewService newService;
+
+    @Inject // This is required for the constructor injection to scan the constructor to perform dependency injection.
     public NewController(NewService newService) {
         this.newService = newService;
     }
