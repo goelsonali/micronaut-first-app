@@ -5,7 +5,7 @@ import jakarta.inject.Singleton;
 @Singleton
 public class ProcessingService {
 
-    public String perform(String title) {
+    public String getTitle(String title) {
         return "Fun with the title - " + title;
     }
 }
