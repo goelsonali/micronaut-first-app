@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.dto.DetailsResponse;
 import io.micronaut.http.HttpRequest;
 import io.micronaut.http.client.HttpClient;
 import io.micronaut.http.client.annotation.Client;
@@ -22,10 +23,17 @@ public class NewControllerTest {
 
     @Test
     void testNewControllerResponse() {
-        String response = client.toBlocking()
-                .retrieve(HttpRequest.GET("/api/v1/details"));
+        DetailsResponse response = client.toBlocking()
+                .retrieve(HttpRequest.GET("/api/v1/details"), DetailsResponse.class);
         String expected = "You are - Sonali in city - London";
-        assertEquals(expected, response);
+        assertEquals(expected, response.getMessage());
     }
 
+    @Test
+    void testNewControllerTitleResponse() {
+        DetailsResponse response = client.toBlocking()
+                .retrieve(HttpRequest.GET("/api/v1/title"), DetailsResponse.class);
+        String expected = "Fun with the title - Price service";
+        assertEquals(expected, response.getMessage());
+    }
 }

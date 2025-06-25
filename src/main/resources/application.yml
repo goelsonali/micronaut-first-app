@@ -11,3 +11,9 @@ micronaut:
       swagger-ui:
         paths: classpath:META-INF/swagger/views/swagger-ui
         mapping: /swagger-ui/**
+      openapi-explorer:
+        paths: classpath:META-INF/swagger/views/openapi-explorer
+        mapping: /openapi-explorer/**
+      rapid:
+        paths: classpath:META-INF/swagger/views/rapidoc
+        mapping: /rapidoc/**

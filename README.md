@@ -1,3 +1,15 @@
+## Set-up Locally
+1. Set-up Java version 17
+- sdk use java 21.0.7-tem
+2. Start the application
+- ./gradlew run or ./gradlew clean build run
+3. Access the application swagger endpoint 
+- http://localhost:8080/swagger-ui/index.html
+- or http://localhost:8080/swagger/micronaut-application-1.0.yml
+- or http://localhost:8080/openapi-explorer
+- or http://localhost:8080/rapidoc
+
+
 ## Micronaut 4.6.3 Documentation
 
 - [User Guide](https://docs.micronaut.io/4.6.3/guide/index.html)
@@ -35,10 +47,4 @@
 
 - [Micronaut Management documentation](https://docs.micronaut.io/latest/guide/index.html#management)
 
-## Set-up Locally
-1. Install docker image for mySqlDB
-- docker pull mysql:latest
-2. Verify if the image is available now
-- docker images
-3. Now create and run a new container (running an instance of mysql)
-- docker run -d --name mn-mysql -e MYSQL_ROOT_PASSWORD=password -p 3311:3306 mysql
+
